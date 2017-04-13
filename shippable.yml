@@ -1,0 +1,12 @@
+language: none
+build:
+  ci:
+    - echo "I'm in CI!"
+  on_success:
+    - echo "I'm in on success and I'm going to cause a failure"
+    - foobar
+    - echo "This should never run"
+  on_failure:
+    - echo "I'm in on failure and I'm going to cause _another_ failure"
+    - foobar
+    - echo "This should never, ever run!"
